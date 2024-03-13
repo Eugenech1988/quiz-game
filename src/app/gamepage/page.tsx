@@ -1,5 +1,5 @@
 'use client';
-import { FC, useRef, useState } from 'react';
+import { FC, forwardRef, useRef, useState } from 'react';
 import questions from '@/data/questions.json';
 import styles from '@/app/gamepage/game.module.scss';
 import Typography from '@/components/Typography';
@@ -9,8 +9,16 @@ import BurgerButton from '@/components/BurgerButton';
 import cx from 'classnames';
 import Link from 'next/link';
 
+// const LinkButton = forwardRef(({ href }, ref) => (
+//     <a href={href} ref={ref}>
+//       Click Me
+//     </a>
+// ));
+//
+// LinkButton.displayName = 'link-button';
+
 const GamePage: FC = () => {
-  const [showRewards, setShowRewards] = useState(false);
+  const [showRewards, setShowRewards] = useState<boolean>(false);
   const [questionNumber, seQuestionNumber] = useState<number>(0);
   const [reward, setReward] = useState<string>('$0');
   const gameLink = useRef();
@@ -33,8 +41,6 @@ const finishGame = (reward: string = prevQuestionReward) => {
   setReward(reward);
   //@ts-ignore
   gameLink.current.click();
-  // setGameStarted(false);
-  // setGameFinished(true);
 };
 return (
   <main className={styles.game}>
@@ -71,10 +77,11 @@ return (
       </aside>
     </div>
     <BurgerButton setShowRewards={setShowRewards} />
-    <Link sx={{display: 'none'}} ref={gameLink} href={{
+    <Link sx={{display: 'none'}} href={{
       pathname: '/endpage',
       query: { reward: reward }
-    }}/>
+    }} ref={gameLink} passHref legacyBehavior
+    />
   </main>
 );
 }
