@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Button from '@/components/Button';
 import Typography from '@/components/Typography';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from './home.module.scss';
+import Link from 'next/link';
 
 const HomePage: FC = () => {
   return (

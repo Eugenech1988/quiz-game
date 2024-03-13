@@ -11,9 +11,9 @@ interface BurgerProps {
 const BurgerButton: FC<BurgerProps> = ({ setShowRewards }) => {
   const [open, setOpen] = useState<boolean>(false);
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     setOpen((prev) => !prev);
-    setShowRewards((prev) => !prev);
+    setShowRewards(prev => !prev);
   };
 
   return (

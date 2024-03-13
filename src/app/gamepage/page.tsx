@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import questions from '@/data/questions.json';
 import styles from '@/app/gamepage/game.module.scss';
 import Typography from '@/components/Typography';
@@ -7,13 +7,13 @@ import QuizButton from '@/components/QuizButton';
 import RewardsList from '@/components/RewardsList';
 import BurgerButton from '@/components/BurgerButton';
 import cx from 'classnames';
-import Link from 'next/Link';
+import Link from 'next/link';
 
-const GamePage = () => {
-  const [showRewards, setShowRewards] = useState<boolean>(false);
+const GamePage: FC = () => {
+  const [showRewards, setShowRewards] = useState(false);
   const [questionNumber, seQuestionNumber] = useState<number>(0);
   const [reward, setReward] = useState<string>('$0');
-  const gameLink = useRef(null);
+  const gameLink = useRef();
 
   const currentQuestion = questions[questionNumber];
 
@@ -31,6 +31,7 @@ const switchToNextQuestion = () => {
 
 const finishGame = (reward: string = prevQuestionReward) => {
   setReward(reward);
+  //@ts-ignore
   gameLink.current.click();
   // setGameStarted(false);
   // setGameFinished(true);

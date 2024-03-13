@@ -4,8 +4,13 @@ import Typography from '@/components/Typography';
 import Link from 'next/link';
 import Button from '@/components/Button';
 import cx from 'classnames';
+import { FC } from 'react';
 
-const EndPage = ({searchParams}) => {
+interface EndPageProps {
+  searchParams: any
+}
+
+const EndPage: FC<EndPageProps> = ({searchParams}) => {
   return (
     <main className={styles.container}>
       <div className={styles.imageSide}>
