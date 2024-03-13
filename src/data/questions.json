@@ -1,0 +1,278 @@
+[
+  {
+    "question": "What is the name of the Jewish New Year?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Hanukkah"
+      },
+      {
+        "letter": "B",
+        "text": "Yom Kippur"
+      },
+      {
+        "letter": "C",
+        "text": "Kwanzaa"
+      },
+      {
+        "letter": "D",
+        "text": "Rosh Hashanah"
+      }
+    ],
+    "correct": ["A"],
+    "reward": "$500"
+  },
+  {
+    "question": "How many blue stripes are on the US flag?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "6"
+      },
+      {
+        "letter": "B",
+        "text": "7"
+      },
+      {
+        "letter": "C",
+        "text": "13"
+      },
+      {
+        "letter": "D",
+        "text": "0"
+      }
+    ],
+    "correct": ["D"],
+    "reward": "$1,000"
+  },
+  {
+    "question": "Which of these characters is not friends with Harry Potter?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Ron Weasley"
+      },
+      {
+        "letter": "B",
+        "text": "Neville Longbottom"
+      },
+      {
+        "letter": "C",
+        "text": "Draco Malfoy"
+      },
+      {
+        "letter": "D",
+        "text": "Hermione Granger"
+      }
+    ],
+    "correct": ["C"],
+    "reward": "$2,000"
+  },
+  {
+    "question": "Which animal does not appear in the Chinese zodiac?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Dragon"
+      },
+      {
+        "letter": "B",
+        "text": "Rabbit"
+      },
+      {
+        "letter": "C",
+        "text": "Dog"
+      },
+      {
+        "letter": "D",
+        "text": "Hummingbird"
+      }
+    ],
+    "correct": ["D"],
+    "reward": "$4,000"
+  },
+  {
+    "question": "Which country hosted the 2016 Summer Olympics?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "China"
+      },
+      {
+        "letter": "B",
+        "text": "Ireland"
+      },
+      {
+        "letter": "C",
+        "text": "Brazil"
+      },
+      {
+        "letter": "D",
+        "text": "Italy"
+      }
+    ],
+    "correct": ["C"],
+    "reward": "$8,000"
+  },
+  {
+    "question": "Which planet is the hottest?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Venus"
+      },
+      {
+        "letter": "B",
+        "text": "Saturn"
+      },
+      {
+        "letter": "C",
+        "text": "Mercury"
+      },
+      {
+        "letter": "D",
+        "text": "Mars"
+      }
+    ],
+    "correct": ["A"],
+    "reward": "$16,000"
+  },
+  {
+    "question": "What was the name of Captain Jack Sparrow's ship in Pirates of the Caribbean?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Marauder"
+      },
+      {
+        "letter": "B",
+        "text": "Black Pearl"
+      },
+      {
+        "letter": "C",
+        "text": "Black python"
+      },
+      {
+        "letter": "D",
+        "text": "Slytherin"
+      }
+    ],
+    "correct": ["B"],
+    "reward": "$32,000"
+  },
+  {
+    "question": "What is the rarest blood type?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Group I"
+      },
+      {
+        "letter": "B",
+        "text": "Group II"
+      },
+      {
+        "letter": "C",
+        "text": "Group III"
+      },
+      {
+        "letter": "D",
+        "text": "Group VI"
+      }
+    ],
+    "correct": ["D"],
+    "reward": "$64,000"
+  },
+  {
+    "question": "Which of these characters is not part of the group of friends from the TV series Friends?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Rachel"
+      },
+      {
+        "letter": "B",
+        "text": "Joey"
+      },
+      {
+        "letter": "C",
+        "text": "Gunther"
+      },
+      {
+        "letter": "D",
+        "text": "Monica"
+      }
+    ],
+    "correct": ["C"],
+    "reward": "$125,000"
+  },
+  {
+    "question": "How many bones are there in the human body?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "206"
+      },
+      {
+        "letter": "B",
+        "text": "205"
+      },
+      {
+        "letter": "C",
+        "text": "201"
+      },
+      {
+        "letter": "D",
+        "text": "209"
+      }
+    ],
+    "correct": ["A"],
+    "reward": "$250,000"
+  },
+  {
+    "question": "Fe is the symbol for which chemical element?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Zinc"
+      },
+      {
+        "letter": "B",
+        "text": "Hydrogen"
+      },
+      {
+        "letter": "C",
+        "text": "Fluorine"
+      },
+      {
+        "letter": "D",
+        "text": "Iron"
+      }
+    ],
+    "correct": ["D"],
+    "reward": "$500,000"
+  },
+  {
+    "question": "What language is spoken by the most people on Earth?",
+    "answers": [
+      {
+        "letter": "A",
+        "text": "Chinese"
+      },
+      {
+        "letter": "B",
+        "text": "Spanish"
+      },
+      {
+        "letter": "C",
+        "text": "Arab"
+      },
+      {
+        "letter": "D",
+        "text": "English"
+      }
+    ],
+    "correct": ["D"],
+    "reward": "$1,000,000"
+  }
+]

@@ -1,0 +1,176 @@
+@import 'src/app/variables.scss';
+@import 'src/app/mixins.module.scss';
+
+.quizBtn {
+  flex-basis: 35%;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 72px;
+  background-color: inherit;
+  max-width: 557px;
+
+  &:nth-child(odd) {
+    margin-right: 5.4rem;
+  }
+
+  @include hexagon(110%, 18px, -17px, 6px, -16px, 20px);
+
+  @media (min-width: 1250px) {
+    &:hover {
+      @include hexagon-colored($accent-color);
+    }
+  }
+
+  &.selected {
+    @include hexagon-colored($accent-color, $selected-answer-color);
+
+    &:hover {
+      @include hexagon-colored($accent-color, $selected-answer-color);
+    }
+  }
+
+  &.correct {
+    @include hexagon-colored($hexagon-correct-border, $correct-answer-color);
+
+    &:hover {
+      @include hexagon-colored($hexagon-correct-border, $correct-answer-color);
+    }
+  }
+
+  &.wrong {
+    @include hexagon-colored($hexagon-wrong-border, $wrong-answer-color);
+
+    &:hover {
+      @include hexagon-colored($hexagon-wrong-border, $wrong-answer-color);
+    }
+  }
+
+  @media (max-width: 1870px) {
+    .topHexagon,
+    .bottomHexagon {
+      width: 111%;
+    }
+  }
+
+  @media (max-width: 1800px) {
+    .topHexagon,
+    .bottomHexagon {
+      width: 112%;
+    }
+  }
+
+  @media (max-width: 1710px) {
+    .topHexagon,
+    .bottomHexagon {
+      width: 113%;
+    }
+  }
+
+  @media (max-width: 1640px) {
+    .topHexagon,
+    .bottomHexagon {
+      width: 114%;
+    }
+  }
+
+  @media (max-width: 1570px) {
+    .topHexagon,
+    .bottomHexagon {
+      width: 116%;
+    }
+
+    .topHexagon {
+      transform: perspective(15px) rotateX(3deg);
+
+      &::before {
+        left: -16px;
+      }
+    }
+
+    .bottomHexagon {
+      transform: perspective(15px) rotateX(-3deg);
+    }
+  }
+
+  @media (max-width: 1380px) {
+    .topHexagon,
+    .bottomHexagon {
+      width: 118%;
+    }
+  }
+
+  @media (max-width: 1315px) {
+    .topHexagon,
+    .bottomHexagon {
+      width: 120%;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    flex-basis: inherit;
+    width: 70%;
+
+    &:nth-child(odd) {
+      margin-right: 0rem;
+    }
+  }
+
+  @media (max-width: 1018px) {
+    .topHexagon,
+    .bottomHexagon {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 830px) {
+    .topHexagon {
+      transform: perspective(12px) rotateX(3deg);
+    }
+
+    .bottomHexagon {
+      transform: perspective(12px) rotateX(-3deg);
+    }
+  }
+
+  @media (max-width: 510px) {
+    height: 56px;
+    width: 100%;
+
+    .topHexagon::before,
+    .bottomHexagon::before {
+      width: 26px;
+      height: 1px;
+    }
+
+    .topHexagon {
+      transform: perspective(10px) rotateX(3deg);
+
+      &::before {
+        left: -24px;
+      }
+    }
+
+    .bottomHexagon {
+      transform: perspective(10px) rotateX(-3deg);
+
+      &::before {
+        right: -24px;
+      }
+    }
+  }
+}
+
+.letter {
+  color: $accent-color;
+  z-index: 1;
+}
+
+.text {
+  display: inline-block;
+  margin-left: .5rem;
+  text-transform: capitalize;
+  text-align: left;
+  z-index: 1;
+}

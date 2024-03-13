@@ -1,0 +1,52 @@
+@import "src/app/variables";
+@import "src/app/mixins.module";
+
+.gameRewardsList {
+  margin: auto 0;
+  width: 100%;
+}
+
+.gameRewardItem {
+  height: 40px;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include hexagon(100%, 47px, -46px, 3px, -47px, 8px);
+
+  &.current {
+    color: $accent-color;
+
+    @include hexagon-colored($accent-color);
+  }
+
+  &.previous {
+    color: $hexagon-border;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: .4rem;
+  }
+
+  @media (max-width: 510px) {
+    height: 32px;
+
+    .topHexagon::before,
+    .bottomHexagon::before {
+      width: 70px;
+    }
+
+    .topHexagon::before {
+      left: -70px;
+    }
+
+    .bottomHexagon::before {
+      right: -70px;
+    }
+  }
+}
+
+.text {
+  z-index: 1;
+}
