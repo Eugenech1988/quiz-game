@@ -8,8 +8,6 @@ interface QuizProps {
   letter: string,
   text: string,
   currentQuestion: object,
-  switchToNextQuestion: () => void,
-  finishGame: () => void
 }
 
 const QuizButton: FC<QuizProps> = ({letter, text, currentQuestion, switchToNextQuestion, finishGame}) => {
@@ -45,7 +43,6 @@ const QuizButton: FC<QuizProps> = ({letter, text, currentQuestion, switchToNextQ
     setWrong(true);
 
     setTimeout(() => {
-      console.log('finish game');
       finishGame();
     }, 1000);
   };
