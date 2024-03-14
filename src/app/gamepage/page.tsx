@@ -31,7 +31,7 @@ const GamePage: FC = () => {
     }
   };
 
-  const updateReward = (newReward) => {
+  const updateReward = (newReward: string) => {
     setReward(newReward);
   };
 
