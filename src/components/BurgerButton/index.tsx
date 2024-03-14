@@ -4,11 +4,16 @@ import React, { FC, useState } from 'react';
 import cx from 'classnames';
 import styles from './burger.module.scss';
 
-const BurgerButton = ({ setShowRewards }) => {
+interface BurgerProps {
+  setShowRewards: (rewards: boolean) => void
+}
+
+const BurgerButton: FC<BurgerProps> = ({ setShowRewards }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleClick = (): void => {
     setOpen((prev) => !prev);
+    //@ts-ignore
     setShowRewards(prev => !prev);
   };
 

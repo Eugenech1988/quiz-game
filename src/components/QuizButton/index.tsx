@@ -8,6 +8,8 @@ interface QuizProps {
   letter: string,
   text: string,
   currentQuestion: object,
+  switchToNextQuestion: () => void,
+  finishGame: (reward?: string) => void
 }
 
 const QuizButton: FC<QuizProps> = ({letter, text, currentQuestion, switchToNextQuestion, finishGame}) => {
@@ -15,16 +17,19 @@ const QuizButton: FC<QuizProps> = ({letter, text, currentQuestion, switchToNextQ
   const [correct, setCorrect] = useState<boolean>(false);
   const [wrong, setWrong] = useState<boolean>(false);
 
-  const handleClick = (e) => {
+  const handleClick = (e: {currentTarget: any, persist: any}) => {
     setSelected(true);
 
     const letter = e.currentTarget.dataset.letter;
     e.persist();
 
+    console.log(currentQuestion);
+
     setTimeout(() => {
       setSelected(false);
 
-      currentQuestion.correct.includes(letter)
+      //@ts-ignore
+      (currentQuestion.correct).includes(letter)
         ? handleCorrectAnswer()
         : handleWrongAnswer();
     }, 1000);
