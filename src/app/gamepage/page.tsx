@@ -1,5 +1,5 @@
 'use client';
-import { FC, useRef, useState, useCallback } from 'react';
+import { FC, useRef, useState } from 'react';
 import questions from '@/data/questions.json';
 import styles from '@/app/gamepage/game.module.scss';
 import Typography from '@/components/Typography';
@@ -7,15 +7,13 @@ import QuizButton from '@/components/QuizButton';
 import RewardsList from '@/components/RewardsList';
 import BurgerButton from '@/components/BurgerButton';
 import cx from 'classnames';
-import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 const GamePage: FC = () => {
   const [showRewards, setShowRewards] = useState<boolean>(false);
   const [questionNumber, seQuestionNumber] = useState<number>(0);
   const [reward, setReward] = useState<string>('$0');
   const gameLink = useRef(null!);
-  const searchParams = useSearchParams();
-  const router = useRouter();
 
   const currentQuestion = questions[questionNumber];
 
@@ -40,16 +38,6 @@ const GamePage: FC = () => {
     //@ts-ignore
     gameLink.current.click();
   };
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-      return params.toString();
-    },
-    [searchParams]
-  );
-
 
   return (
     <main className={styles.game}>
@@ -86,14 +74,19 @@ const GamePage: FC = () => {
         </aside>
       </div>
       <BurgerButton setShowRewards={setShowRewards}/>
-      <button
-        type={'button'}
-        style={{display: 'none'}}
-        ref={gameLink}
-        onClick={() => {
-          router.push('/endpage' + '?' + createQueryString('reward', prevQuestionReward));
-        }}
-      />
+      <Link href={{
+        pathname: '/endpage',
+        query: { reward: reward ? reward : prevQuestionReward }
+      }}>
+        <button
+          type={'button'}
+          style={{display: 'none'}}
+          ref={gameLink}
+          // onClick={() => {
+          //   router.push('/endpage' + '?' + createQueryString('reward', reward));
+          // }}
+        />
+      </Link>
     </main>
   );
 };
