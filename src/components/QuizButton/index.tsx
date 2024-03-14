@@ -23,8 +23,6 @@ const QuizButton: FC<QuizProps> = ({letter, text, currentQuestion, switchToNextQ
     const letter = e.currentTarget.dataset.letter;
     e.persist();
 
-    console.log(currentQuestion);
-
     setTimeout(() => {
       setSelected(false);
 

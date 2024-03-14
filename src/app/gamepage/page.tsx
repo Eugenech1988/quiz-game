@@ -29,12 +29,8 @@ const GamePage: FC = () => {
     }
   };
 
-  const updateReward = (newReward: any) => {
-    setReward(newReward);
-  };
-
   const finishGame = (reward: string = prevQuestionReward) => {
-    updateReward(reward);
+    setReward(reward);
     //@ts-ignore
     gameLink.current.click();
   };
@@ -76,15 +72,12 @@ const GamePage: FC = () => {
       <BurgerButton setShowRewards={setShowRewards}/>
       <Link href={{
         pathname: '/endpage',
-        query: { reward: reward ? reward : prevQuestionReward }
+        query: { reward: ((reward != '$0') ? reward : prevQuestionReward)}
       }}>
         <button
           type={'button'}
           style={{display: 'none'}}
           ref={gameLink}
-          // onClick={() => {
-          //   router.push('/endpage' + '?' + createQueryString('reward', reward));
-          // }}
         />
       </Link>
     </main>
