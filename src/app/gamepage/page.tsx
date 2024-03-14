@@ -20,8 +20,8 @@ const GamePage: FC = () => {
   const currentQuestion = questions[questionNumber];
 
   const prevQuestionReward = questionNumber
-  ? questions[questionNumber - 1].reward
-  : '$0';
+    ? questions[questionNumber - 1].reward
+    : '$0';
 
   const switchToNextQuestion = () => {
     if (questionNumber === questions.length - 1) {
@@ -38,64 +38,64 @@ const GamePage: FC = () => {
   const finishGame = (reward: string = prevQuestionReward) => {
     updateReward(reward);
     //@ts-ignore
-    gameLink.current.click()
+    gameLink.current.click();
   };
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString())
-      params.set(name, value)
-      return params.toString()
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+      return params.toString();
     },
     [searchParams]
-  )
+  );
 
 
   return (
-  <main className={styles.game}>
-    <div className={styles.gameInner}>
-      <div className={styles.gameTitle}>
-        <Typography component="h3" text={currentQuestion.question}/>
-      </div>
+    <main className={styles.game}>
+      <div className={styles.gameInner}>
+        <div className={styles.gameTitle}>
+          <Typography component="h3" text={currentQuestion.question}/>
+        </div>
 
-      <div className={styles.gameAnswers}>
-        {currentQuestion.answers.map((item) => {
-            return (
-              <QuizButton
-                key={item.letter}
-                letter={item.letter}
-                text={item.text}
-                currentQuestion={currentQuestion}
-                switchToNextQuestion={switchToNextQuestion}
-                finishGame={finishGame}
-              />
-            );
+        <div className={styles.gameAnswers}>
+          {currentQuestion.answers.map((item) => {
+              return (
+                <QuizButton
+                  key={item.letter}
+                  letter={item.letter}
+                  text={item.text}
+                  currentQuestion={currentQuestion}
+                  switchToNextQuestion={switchToNextQuestion}
+                  finishGame={finishGame}
+                />
+              );
+            }
+          )
           }
-        )
-        }
+        </div>
       </div>
-    </div>
-    <div className={cx(styles.gameOverlay, {
-      [styles.open]: (showRewards)
-    })}>
-      <aside className={styles.gameRewards}>
-        <RewardsList
-          rewards={questions.map((item) => item.reward).reverse()}
-          questionNumber={questionNumber}
-        />
-      </aside>
-    </div>
-    <BurgerButton setShowRewards={setShowRewards} />
-    <button
-      type={'button'}
-      style={{display: 'none'}}
-      ref={gameLink}
-      onClick={() => {
-        router.push( '/endpage' + '?' + createQueryString('reward', prevQuestionReward));
-      }}
-    />
-  </main>
-);
-}
+      <div className={cx(styles.gameOverlay, {
+        [styles.open]: (showRewards)
+      })}>
+        <aside className={styles.gameRewards}>
+          <RewardsList
+            rewards={questions.map((item) => item.reward).reverse()}
+            questionNumber={questionNumber}
+          />
+        </aside>
+      </div>
+      <BurgerButton setShowRewards={setShowRewards}/>
+      <button
+        type={'button'}
+        style={{display: 'none'}}
+        ref={gameLink}
+        onClick={() => {
+          router.push('/endpage' + '?' + createQueryString('reward', prevQuestionReward));
+        }}
+      />
+    </main>
+  );
+};
 
 export default GamePage;
