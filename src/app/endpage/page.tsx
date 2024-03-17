@@ -19,7 +19,7 @@ const EndPage: FC<EndPageProps> = ({searchParams}) => {
         </div>
       </div>
       <div className={styles.linkSide}>
-        <div className={cx(styles.linkContent)}>
+        <div className={styles.linkContent}>
           <div className={styles.textBlock}>
             <Typography
               text="Total score"
