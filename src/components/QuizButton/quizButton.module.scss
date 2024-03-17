@@ -113,7 +113,7 @@
     width: 70%;
 
     &:nth-child(odd) {
-      margin-right: 0rem;
+      margin-right: 0;
     }
   }
 
@@ -161,6 +161,8 @@
     }
   }
 }
+
+.topHexagon, .bottomHexagon {}
 
 .letter {
   color: $accent-color;

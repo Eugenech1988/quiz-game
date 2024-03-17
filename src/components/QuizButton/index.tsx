@@ -17,7 +17,7 @@ const QuizButton: FC<QuizProps> = ({letter, text, currentQuestion, switchToNextQ
   const [correct, setCorrect] = useState<boolean>(false);
   const [wrong, setWrong] = useState<boolean>(false);
 
-  const handleClick = (e: {currentTarget: any, persist: any}) => {
+  const handleClick = (e: {currentTarget: object, persist: any}) => {
     setSelected(true);
 
     const letter = e.currentTarget.dataset.letter;
@@ -50,7 +50,7 @@ const QuizButton: FC<QuizProps> = ({letter, text, currentQuestion, switchToNextQ
     }, 1000);
   };
 
-  let stateClass = '';
+  let stateClass;
 
   switch (true) {
     case selected:
