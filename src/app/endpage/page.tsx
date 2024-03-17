@@ -12,14 +12,14 @@ interface EndPageProps {
 
 const EndPage: FC<EndPageProps> = ({searchParams}) => {
   return (
-    <main className={styles.container}>
+    <main className={cx(styles.container, styles.endContainer)}>
       <div className={styles.imageSide}>
         <div className={styles.imageContent}>
           <Image src="/hand.svg" alt={'hand'} width={624} height={367}/>
         </div>
       </div>
       <div className={styles.linkSide}>
-        <div className={cx(styles.linkContent, styles.endLinkContent)}>
+        <div className={cx(styles.linkContent)}>
           <div className={styles.textBlock}>
             <Typography
               text="Total score"

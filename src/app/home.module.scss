@@ -6,6 +6,10 @@
   background: linear-gradient(to bottom right, #fff 0%, #fff 50%, $selected-answer-color 50%, $selected-answer-color 100%);
 }
 
+.container.endContainer {
+  background: $game-bg-color;
+}
+
 .imageSide, .linkSide {
   height: 100%;
   width: 50%;
