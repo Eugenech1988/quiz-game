@@ -14,8 +14,7 @@ const Typography: FC<TypographyProps> = ({text, component}) => {
     <p className={cx({
       [styles.h1]: (component === 'h1'),
       [styles.h3]: (component === 'h3'),
-      [styles.h3Varied]: (component === 'h3Varied'),
-      [styles.p]: (component === 'p')
+      [styles.h3Varied]: (component === 'h3Varied')
     })}>{text}</p>
   )
 }

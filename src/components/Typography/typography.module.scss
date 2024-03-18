@@ -17,7 +17,7 @@
 .h3Varied {
   @extend .h3;
   color: $hexagon-border;
-
+  text-align: left;
 }
 
 @media (max-width: 1024px) {
@@ -31,6 +31,9 @@
   .h1 {
     font-size: 32px;
     line-height: 38px;
+    text-align: center;
+  }
+  .h3Varied {
     text-align: center;
   }
 }
